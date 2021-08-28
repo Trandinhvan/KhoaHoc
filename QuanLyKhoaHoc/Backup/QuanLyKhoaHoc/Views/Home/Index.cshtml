@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Trang chủ";
+}
+@using QuanLyKhoaHoc.Models;
+@model List<MonHoc>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <div class="content">
+            <div class="left">
+                <h3>Môn Học</h3>
+                <div>
+                    <ol style="margin-left:30px;">
+                            @foreach (var mh in Model)
+                            {
+                               <li>@mh.TenMonHoc</li> 
+                            }  
+                    </ol>
+                     
+                </div>
+                    
+            </div>
+            <div class="middle">
+
+            </div>
+            <div class="right">
+                <div>
+                    <h3 class="heading__khoahoc">Khóa Học</h3>
+                    <div class="text__khoahoc">
+                      @Html.Action("DanhMucKhoaHoc", "Home")  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

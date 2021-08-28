@@ -1,0 +1,14 @@
+﻿@using QuanLyKhoaHoc.Models;
+@model List<KhoaHoc>
+
+
+@*<ol>*@
+    @foreach (var kh in Model)
+    {
+            <h4><a href="@Url.Action("HienThiMonHocTheoKhoaHoc", "Home", new { id = @kh.ID })">@kh.TenKhoaHoc</a> </h4>
+        @*<li>
+            @Html.ActionLink(@kh.TenKhoaHoc, "HienThiMonHocTheoKhoaHoc", "Home", new { id = kh.ID }, new { @class = "nav-link" })
+        </li>*@
+            
+    }
+@*</ol>*@

@@ -1,0 +1,21 @@
+﻿@using QuanLyKhoaHoc.Models;
+@model List<KhoaHoc>
+
+@foreach (var kh in Model)
+{
+    @*<h4><a class="Courses" href="@Url.Action("HienThiMonHocTheoKhoaHoc", "Home", new { id = @kh.ID })">@kh.TenKhoaHoc</a> </h4>*@
+    <li class="Courses" style="text-decoration:none">
+            @Html.ActionLink(@kh.TenKhoaHoc, "HienThiMonHocTheoKhoaHoc", "Home", new { id = kh.ID }, new { @class = "nav-link" })
+        </li>
+
+}
+<script>
+   
+    var a = document.querySelector('.Courses');
+    var i = document.querySelector('.course-name');
+    function getName() {
+        i.innerHTML = a.innerHTML;
+    }
+    a.addEventListener('click', getName);
+    
+</script>
